@@ -12,7 +12,9 @@ class ProductService:
 
     def get_product(self, id):
         result = self.repo.get_by_id(id)
-        if 100 <= result.price <= 200:
+        have_discount = result.have_discount()
+
+        if have_discount:
             return result, True
-        return result.filter(id=id).select_related("category").first(), False
+        return result, False
 

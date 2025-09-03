@@ -1,1 +1,2 @@
-запуск тестов - python -m pytest -v
+запуск тестов
+```python -m pytest -v```
